@@ -12,8 +12,20 @@
 
 ## 2.1 Operating System
 
+**Rust**
+
 - [ ] [RCore](https://github.com/rcore-os/rCore)
 - [ ] [Writing an OS in Rust](https://github.com/rustcc/writing-an-os-in-rust)
+
+**C/C++**
+
+- [ ] [ZJUOS](https://github.com/ZJU-SEC/os22fall-stu)
+- [x] [RVOS](https://github.com/plctlab/riscv-operating-system-mooc)
+- [ ] [UCore](https://github.com/LearningOS/uCore-Tutorial-Guide-2022S)
+
+**Resources**
+
+- [ ] [Linux Kernel Wiki](https://github.com/0voice/linux_kernel_wiki)
 
 ## 2.2 Compiler
 
