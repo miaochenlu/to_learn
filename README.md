@@ -29,7 +29,11 @@
 
 ## 2.2 Compiler
 
-### a. LLVM
+### a. Interpreter
+
+- [ ] [Crafting Interpreters](https://github.com/munificent/craftinginterpreters) / [Chinese Version](https://github.com/GuoYaxiang/craftinginterpreters_zh)
+
+### b. LLVM
 
 - [ ] [LLVM tutorial](https://llvm-tutorial-cn.readthedocs.io/en/latest/)
 - [ ] Software prefetch
