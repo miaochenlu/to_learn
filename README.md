@@ -8,6 +8,13 @@
 
   - [ ] [Learn SystemC](https://learnsystemc.com/)
 
+* C/C++
+  
+  - [ ] [Modern CPP](https://changkun.de/modern-cpp/zh-cn/00-preface/)
+  - [ ] [The Art of Writing Efficient Programs](https://github.com/xiaoweiChen/The-Art-of-Writing-Efficient-Programs)
+  - [ ] [CPP Core Guidelines](https://github.com/lynnboy/CppCoreGuidelines-zh-CN/blob/master/CppCoreGuidelines-zh-CN.md)
+  - [ ] [CPP Cheetsheet](https://github.com/mortennobel/cpp-cheatsheet)
+
 # 2. Software
 
 ## 2.1 Operating System
