@@ -14,6 +14,7 @@
   - [ ] [The Art of Writing Efficient Programs](https://github.com/xiaoweiChen/The-Art-of-Writing-Efficient-Programs)
   - [ ] [CPP Core Guidelines](https://github.com/lynnboy/CppCoreGuidelines-zh-CN/blob/master/CppCoreGuidelines-zh-CN.md)
   - [ ] [CPP Cheetsheet](https://github.com/mortennobel/cpp-cheatsheet)
+  - [ ] [CPP Things](https://github.com/Light-City/CPlusPlusThings)
 
 # 2. Software
 
