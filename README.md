@@ -39,6 +39,8 @@
 
 ## 2.2 Compiler
 
+[Compiler Resources](https://github.com/shining1984/PL-Compiler-Resource)
+
 ### a. Interpreter
 
 - [ ] [Crafting Interpreters](https://github.com/munificent/craftinginterpreters) / [Chinese Version](https://github.com/GuoYaxiang/craftinginterpreters_zh)
@@ -46,6 +48,8 @@
 ### b. LLVM
 
 - [ ] [LLVM tutorial](https://llvm-tutorial-cn.readthedocs.io/en/latest/)
+- [ ] [LLVM IR tutorial](https://github.com/Evian-Zhang/llvm-ir-tutorial)
+- [ ] [LLVM tutor](https://github.com/banach-space/llvm-tutor)
 - [ ] Software prefetch
 
 # 3. Hardware
