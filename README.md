@@ -48,7 +48,7 @@
 ### b. LLVM
 
 - [ ] [LLVM tutorial](https://llvm-tutorial-cn.readthedocs.io/en/latest/)
-- [ ] [LLVM IR tutorial](https://github.com/Evian-Zhang/llvm-ir-tutorial)
+- [x] [LLVM IR tutorial](https://github.com/Evian-Zhang/llvm-ir-tutorial)
 - [ ] [LLVM tutor](https://github.com/banach-space/llvm-tutor)
 - [ ] Software prefetch
 
