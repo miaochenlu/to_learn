@@ -52,6 +52,12 @@
 - [ ] [LLVM tutor](https://github.com/banach-space/llvm-tutor)
 - [ ] Software prefetch
 
+## 2.3 Distributed System
+
+- [ ] Book: Designing Data-Intensive Applications
+- [ ] Raft [thesis-cn](https://github.com/OneSizeFitsQuorum/raft-thesis-zh_cn)
+- [ ] [PinCap Talent Paln](https://github.com/pingcap/talent-plan)
+
 # 3. Hardware
 
 
