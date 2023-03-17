@@ -58,6 +58,10 @@
 - [ ] Raft [thesis-cn](https://github.com/OneSizeFitsQuorum/raft-thesis-zh_cn)
 - [ ] [Pincap Talent Paln](https://github.com/pingcap/talent-plan)
 
+## 2.4 Perf
+
+- [ ] [Perf Tutorial](https://github.com/NAThompson/performance_tuning_tutorial)
+
 # 3. Hardware
 
 
