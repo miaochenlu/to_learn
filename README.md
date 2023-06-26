@@ -29,7 +29,7 @@
 
 **C/C++**
 
-- [ ] [ZJUOS](https://github.com/ZJU-SEC/os22fall-stu)
+- [x] [ZJUOS](https://github.com/ZJU-SEC/os22fall-stu)
 - [x] [RVOS](https://github.com/plctlab/riscv-operating-system-mooc)
 - [ ] [UCore](https://github.com/LearningOS/uCore-Tutorial-Guide-2022S)
 
@@ -81,7 +81,7 @@
 
 - [ ] Loop Cache
 - [ ] uOp Cache
-- [ ] Hardware Prefetcher
+- [x] Hardware Prefetcher
 
 ## 3.3 PMU
 
