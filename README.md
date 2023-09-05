@@ -5,9 +5,12 @@
 # 1. Programming Languages
 
 * Rust
+* Haskell
+  - [ ] [Haskell趣学指南](https://learnyouahaskell.mno2.org/)
 * Chisel
+* BlueSpec
+  - [ ] [BSV Tutorial](https://github.com/rsnikhil/Bluespec_BSV_Tutorial)
 * SystemC
-
   - [ ] [Learn SystemC](https://learnsystemc.com/)
 
 * C/C++
@@ -64,7 +67,6 @@
 
 # 3. Hardware
 
-
 ## 3.1 Open Source Chips
 
 * Xiangshan
@@ -103,6 +105,7 @@
 
 ## 3.6 Tools
 
+- [ ] Verification: UVM
 - [ ] [Open On-Chip Debugger (OpenOCD)](https://github.com/openocd-org/openocd)
 
 * Hard Processor System (HPS)
