@@ -10,6 +10,7 @@
 * Chisel
 * BlueSpec
   - [ ] [BSV Tutorial](https://github.com/rsnikhil/Bluespec_BSV_Tutorial)
+  - [ ] [MIT 6.175 6.375](https://github.com/kazutoiris/MIT6.175)
 * SystemC
   - [ ] [Learn SystemC](https://learnsystemc.com/)
 
