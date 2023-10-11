@@ -77,9 +77,18 @@
   - [ ] [Xiangshan RTL](https://github.com/OpenXiangShan/XiangShan)
   - [ ] [Xiangshan Simulator](https://github.com/OpenXiangShan/GEM5)
 
-* Rocket Chip
+* Rocket Chip [Inorder single-issue]
 
-  - [ ] [Rocket Chip RTL](https://github.com/chipsalliance/rocket-chip)
+  - [x] [Rocket Chip RTL](https://github.com/chipsalliance/rocket-chip) [Some Docs in Chinese](https://www.zhihu.com/column/c_1425551698199130112)
+  - [ ] redefine interfaces
+
+* Shuttle [Inorder multi-issue]
+
+  - [ ] [Shuttle RTL](https://github.com/ucb-bar/shuttle)
+
+* SonicBoom [Out-of-order]
+
+  - [ ] [Boom RTL](https://github.com/riscv-boom/riscv-boom)
  
 ## 3.2 MicroArch
 
