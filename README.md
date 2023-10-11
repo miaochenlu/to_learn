@@ -112,6 +112,7 @@
 ## 3.5 Simulator
 
 - [ ] [Rare: Rust A Riscv Emulator](https://siriusdemon.github.io/Rare/index.html)
+- [ ] [RISCV Emulator in C](https://tinylab.org/writing-a-simple-riscv-emulator-in-plain-c/) [github](https://github.com/fmash16/riscv_emulator)
 
 
 ## 3.6 Tools
