@@ -14,6 +14,7 @@
   - [ ] [MIT 6.175 6.375](https://github.com/kazutoiris/MIT6.175)
 * SystemC
   - [ ] [Learn SystemC](https://learnsystemc.com/)
+  - [ ] [SystemC Tutorial](https://github.com/SingularityKChen/SystemC-Training)
 
 * C/C++
   
