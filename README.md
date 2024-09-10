@@ -58,6 +58,14 @@
 - [ ] [LLVM tutor](https://github.com/banach-space/llvm-tutor)
 - [ ] Software prefetch
 
+### c. MLIR
+
+- [ ] [mlir tutorial](https://github.com/j2kun/mlir-tutorial)
+
+### d. triton
+
+- [ triton tutorial](https://github.com/VikParuchuri/triton_tutorial)
+
 ## 2.3 Distributed System
 
 - [ ] Book: Designing Data-Intensive Applications
@@ -99,7 +107,7 @@
 
 ## 3.3. AI chips
 
-- [ ] [Corenell ECE5545: Machine Learning Hardware and Systems](https://abdelfattah-class.github.io/ece5545/)
+- [ ] [CORNELL ECE5545: Machine Learning Hardware and Systems](https://abdelfattah-class.github.io/ece5545/)
 - [ ] [MIT 6.5930: Hardware Architectures for Deep Learning](https://csg.csail.mit.edu/6.5930/)
   * [video](https://www.bilibili.com/video/BV14y41187dR/?spm_id_from=333.999.0.0&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
   * [book: Efficient Processing of
