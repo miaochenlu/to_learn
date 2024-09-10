@@ -97,26 +97,34 @@
 - [ ] uOp Cache
 - [x] Hardware Prefetcher
 
-## 3.3 PMU
+## 3.3. AI chips
+
+- [ ] [Corenell ECE5545: Machine Learning Hardware and Systems](https://abdelfattah-class.github.io/ece5545/)
+- [ ] [MIT 6.5930: Hardware Architectures for Deep Learning](https://csg.csail.mit.edu/6.5930/)
+  * [video](https://www.bilibili.com/video/BV14y41187dR/?spm_id_from=333.999.0.0&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
+  * [book: Efficient Processing of
+Deep Neural Networks](https://eyeriss.mit.edu/2020_efficient_dnn_excerpt.pdf)
+
+## 3.4 PMU
 
 - [ ] Use perf counters to do Top-down performance analysis
 - [ ] Use perf counters to do reverse engineering
 
 
-## 3.4 Heterogeneous System
+## 3.5 Heterogeneous System
 
 * GPU
 * ASIC Accelerators
 * RDMA RNIC
 * DDIO/DCA
 
-## 3.5 Simulator
+## 3.6 Simulator
 
 - [ ] [Rare: Rust A Riscv Emulator](https://siriusdemon.github.io/Rare/index.html)
 - [ ] [RISCV Emulator in C](https://tinylab.org/writing-a-simple-riscv-emulator-in-plain-c/) [github](https://github.com/fmash16/riscv_emulator)
 
 
-## 3.6 Tools
+## 3.7 Tools
 
 - [ ] Verification: UVM
 - [ ] [Open On-Chip Debugger (OpenOCD)](https://github.com/openocd-org/openocd)
