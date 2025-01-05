@@ -13,7 +13,7 @@
   - [x] [BSV中文教程](https://github.com/WangXuan95/BSV_Tutorial_cn)
   - [ ] [MIT 6.175 6.375](https://github.com/kazutoiris/MIT6.175)
 * SystemC
-  - [ ] [Learn SystemC](https://learnsystemc.com/)
+  - [ ] [onging] [Learn SystemC](https://learnsystemc.com/)
   - [ ] [SystemC Tutorial](https://github.com/SingularityKChen/SystemC-Training)
 
 * C/C++
@@ -112,6 +112,10 @@
   * [video](https://www.bilibili.com/video/BV14y41187dR/?spm_id_from=333.999.0.0&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
   * [book: Efficient Processing of
 Deep Neural Networks](https://eyeriss.mit.edu/2020_efficient_dnn_excerpt.pdf)
+
+- [ ] NVDLA
+  *  [Learning NVDLA NOTES](https://github.com/JunningWu/Learning-NVDLA-Notes)
+  *  [somnia](https://github.com/soDLA-publishment/somnia)
 
 ## 3.4 PMU
 
