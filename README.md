@@ -64,7 +64,8 @@
 
 ### d. triton
 
-- [ triton tutorial](https://github.com/VikParuchuri/triton_tutorial)
+- [triton tutorial](https://github.com/VikParuchuri/triton_tutorial)
+- [Triton-Puzzles](https://github.com/srush/Triton-Puzzles)
 
 ## 2.3 Distributed System
 
