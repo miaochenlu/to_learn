@@ -23,6 +23,11 @@
   - [ ] [CPP Core Guidelines](https://github.com/lynnboy/CppCoreGuidelines-zh-CN/blob/master/CppCoreGuidelines-zh-CN.md)
   - [ ] [CPP Cheetsheet](https://github.com/mortennobel/cpp-cheatsheet)
   - [ ] [CPP Things](https://github.com/Light-City/CPlusPlusThings)
+ 
+* CUDA
+  - [ ] [gpu mode](https://github.com/gpu-mode/lectures)
+  - [ ] [CUDA 100 days Learning Journey](https://github.com/a-hamdi/cuda)
+  - [ ] [GPU Puzzles](https://github.com/srush/GPU-Puzzles)
 
 # 2. Software
 
@@ -79,7 +84,8 @@
 
 # 3. Hardware
 
-## 3.1 Open Source Chips
+## 3.1. CPU
+### 3.1.1 Open Source Chips
 
 * Xiangshan
 
@@ -100,11 +106,16 @@
 
   - [ ] [Boom RTL](https://github.com/riscv-boom/riscv-boom)
  
-## 3.2 MicroArch
+### 3.1.2 MicroArch
 
 - [ ] Loop Cache
 - [ ] uOp Cache
 - [x] Hardware Prefetcher
+
+## 3.2. GPU
+
+- [ ] [Tiny GPU](https://github.com/adam-maj/tiny-gpu)
+- [ ] Design GPGPU [zhihu](https://github.com/adam-maj/tiny-gpu) [github](https://github.com/OpenGPGPU/opengpgpu)
 
 ## 3.3. AI chips
 
@@ -135,7 +146,7 @@ Deep Neural Networks](https://eyeriss.mit.edu/2020_efficient_dnn_excerpt.pdf)
 
 - [ ] [Rare: Rust A Riscv Emulator](https://siriusdemon.github.io/Rare/index.html)
 - [ ] [RISCV Emulator in C](https://tinylab.org/writing-a-simple-riscv-emulator-in-plain-c/) [github](https://github.com/fmash16/riscv_emulator)
-
+- [x] [rvemu](https://www.bilibili.com/video/BV1uY4y1D7bJ?spm_id_from=333.788.videopod.sections&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
 
 ## 3.7 Tools
 
