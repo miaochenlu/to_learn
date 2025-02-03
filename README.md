@@ -148,7 +148,12 @@ Deep Neural Networks](https://eyeriss.mit.edu/2020_efficient_dnn_excerpt.pdf)
 - [ ] [RISCV Emulator in C](https://tinylab.org/writing-a-simple-riscv-emulator-in-plain-c/) [github](https://github.com/fmash16/riscv_emulator)
 - [x] [rvemu](https://www.bilibili.com/video/BV1uY4y1D7bJ?spm_id_from=333.788.videopod.sections&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
 
-## 3.7 Tools
+## 3.7 Performance Analysis
+
+- [ ] [perf book](https://github.com/dendibakh/perf-book)
+- [ ] [CPU性能分析与优化](https://zhuanlan.zhihu.com/p/704499932)
+
+## 3.8 Tools
 
 - [ ] Verification: UVM
 - [ ] [Open On-Chip Debugger (OpenOCD)](https://github.com/openocd-org/openocd)
