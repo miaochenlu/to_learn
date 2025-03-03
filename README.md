@@ -28,6 +28,7 @@
   - [ ] [gpu mode](https://github.com/gpu-mode/lectures)
   - [ ] [CUDA 100 days Learning Journey](https://github.com/a-hamdi/cuda)
   - [ ] [GPU Puzzles](https://github.com/srush/GPU-Puzzles)
+  - [ ] [cudecodes](https://github.com/Maharshi-Pandya/cudacodes)
 
 # 2. Software
 
