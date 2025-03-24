@@ -121,6 +121,9 @@
 
 ## 3.3. AI chips
 
+- [ ] [Zomi AI System](https://chenzomi12.github.io/01Introduction/README.html)
+- [ ] [UCB Hardware for Machine Learning](https://web.archive.org/web/20240304124352/https://inst.eecs.berkeley.edu/~ee290-2/sp24/#course_info)
+- [ ] [Accelerator Architectures for Machine Learning](https://nycu-caslab.github.io/AAML2024/index.html)
 - [ ] [CORNELL ECE5545: Machine Learning Hardware and Systems](https://abdelfattah-class.github.io/ece5545/)
 - [ ] [MIT 6.5930: Hardware Architectures for Deep Learning](https://csg.csail.mit.edu/6.5930/)
   * [video](https://www.bilibili.com/video/BV14y41187dR/?spm_id_from=333.999.0.0&vd_source=8ad4a5486dc31a2fc579f15e7932aaa8)
