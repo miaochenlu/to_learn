@@ -1,0 +1,1266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Research: Revolutionizing Academic and Technical Discovery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --accent: #F59E0B;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --gradient-1: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+            --gradient-2: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            --font-size-base: 1.1rem;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            font-size: var(--font-size-base);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-shadow: none;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide-content {
+            max-width: 1400px;
+            width: 95%;
+            margin: 0 auto;
+            z-index: 10;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 20;
+        }
+        
+        .title-slide {
+            background: var(--gradient-1);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .title-slide h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: none;
+        }
+        
+        .title-slide p {
+            font-size: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .nav-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: var(--secondary);
+            z-index: 100;
+            transition: width 0.3s ease;
+        }
+        
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: 1;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255,255,255,0.2) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(255,255,255,0.2) 2px, transparent 0);
+            background-size: 100px 100px;
+        }
+        
+        .bg-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        table th {
+            background: rgba(79, 70, 229, 0.3);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        table td {
+            padding: 0.8rem 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.1rem;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .feature-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-item {
+            flex: 1 1 280px;
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+        
+        .highlight-box {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        code {
+            background: rgba(0,0,0,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-size: 1.3rem;
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-indicator {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator-dot.active {
+            background: var(--secondary);
+            transform: scale(1.3);
+        }
+        
+        h2.text-4xl, h2.text-3xl {
+            text-shadow: none;
+            font-size: 2.6rem;
+        }
+        
+        h3.text-2xl {
+            font-size: 2.2rem;
+            text-shadow: none;
+        }
+        
+        h3.text-xl, h4.text-xl {
+            font-size: 1.8rem;
+            text-shadow: none;
+        }
+        
+        p.text-xl {
+            font-size: 1.4rem;
+        }
+        
+        p.text-lg {
+            font-size: 1.2rem;
+        }
+        
+        p, li, td, th, blockquote {
+            font-size: 1.1rem;
+        }
+        
+        /* Expand content space for case study images */
+        .card .grid-cols-1.md\:grid-cols-2 {
+            gap: 2rem;
+        }
+        
+        /* Make images larger in case studies */
+        .card img {
+            max-height: 60vh;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        
+        /* Improve case study image layout specifically */
+        #slide-6 .grid-cols-1.md\:grid-cols-2 img,
+        #slide-7 .grid-cols-1.md\:grid-cols-2 img {
+            max-width: 100%;
+            max-height: 50vh;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .text-transparent {
+            color: rgba(255,255,255,0.95) !important;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i></button>
+        <button class="nav-btn" id="nextBtn"><i class="fas fa-arrow-right"></i></button>
+    </div>
+    
+    <div class="slide-indicator" id="slideIndicator"></div>
+    
+    <!-- Title Slide -->
+    <section class="slide title-slide" id="slide-1">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h1 class="animate__animated animate__fadeInDown">AI-Powered Research</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">Revolutionizing Academic and Technical Discovery</p>
+        </div>
+        <div class="author-info animate__animated animate__fadeIn animate__delay-2s" style="position: absolute; bottom: 80px; width: 100%; text-align: center;">
+            <p class="text-3xl font-semibold">Chelsea Miao</p>
+            <p class="text-2xl mt-2">Peregrine Arch Team</p>
+        </div>
+        <div class="page-number">1</div>
+    </section>
+    
+    <!-- Overview Slide -->
+    <section class="slide" id="slide-2" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-4xl mb-6 text-transparent">Overview</h2>
+            
+            <div class="card fade-in">
+                <p class="text-xl">This presentation explores how cutting-edge AI tools are fundamentally transforming research workflows across disciplines. From automating literature reviews to generating novel insights, AI assistants are enabling researchers to achieve deeper understanding, accelerate knowledge acquisition, and enhance productivity throughout the research lifecycle.</p>
+            </div>
+            
+            <div class="feature-block">
+                <div class="feature-item fade-in">
+                    <h3 class="text-xl mb-2 text-blue-400"><i class="fas fa-search-plus mr-2"></i>Deeper Understanding</h3>
+                    <p>AI systems can process and synthesize information at unprecedented scales</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <h3 class="text-xl mb-2 text-green-400"><i class="fas fa-bolt mr-2"></i>Accelerated Discovery</h3>
+                    <p>Research processes that once took weeks can be completed in hours or minutes</p>
+                </div>
+                <div class="feature-item fade-in">
+                    <h3 class="text-xl mb-2 text-yellow-400"><i class="fas fa-lightbulb mr-2"></i>Novel Insights</h3>
+                    <p>AI can identify patterns and connections that might escape human researchers</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">2</div>
+    </section>
+    
+    <!-- AI Research Tools Ecosystem -->
+    <section class="slide" id="slide-3" style="background: linear-gradient(135deg, #312E81 0%, #1E40AF 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-4xl mb-6 text-transparent">AI Research Tools Ecosystem</h2>
+            
+            <div class="card fade-in">
+                <p class="text-xl mb-4">The modern AI research ecosystem comprises complementary tools designed to address specific challenges in the research workflow:</p>
+                
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>AI Tools</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Google Gemini</td>
+                                <td>Google's multimodal AI that works with text, images, code, and videos while integrating across Google's product ecosystem.</td>
+                            </tr>
+                            <tr>
+                                <td>Perplexity</td>
+                                <td>A knowledge search tool that finds information online, summarizes it clearly, and shows where the information came from.</td>
+                            </tr>
+                            <tr>
+                                <td>智谱轻言 ChatGLM</td>
+                                <td>A bilingual AI assistant optimized for Chinese language and cultural contexts while excelling at various communication tasks.</td>
+                            </tr>
+                            <tr>
+                                <td>Genspark</td>
+                                <td>An AI system that creates custom information pages for your questions instead of traditional search results.</td>
+                            </tr>
+                            <tr>
+                                <td>Manus</td>
+                                <td>An autonomous AI assistant that can complete complex tasks across multiple domains without constant human guidance.</td>
+                            </tr>
+                            <tr>
+                                <td>alphaXiv</td>
+                                <td>A platform that makes scientific papers easier to understand with AI summaries and enables discussions between researchers.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">3</div>
+    </section>
+    
+    <!-- Deep Research vs Deep Search -->
+    <section class="slide" id="slide-4" style="background: linear-gradient(135deg, #0F766E 0%, #065F46 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-4xl mb-6 text-transparent">1. Deep Research: Beyond Traditional Literature Reviews</h2>
+            
+            <h3 class="text-2xl mb-4 text-teal-300">1.1. Deep Search vs. Deep Research</h3>
+            
+            <div class="grid-container">
+                <div class="card fade-in">
+                    <h4 class="text-xl mb-3 text-blue-400"><i class="fas fa-search mr-2"></i>Deep Search</h4>
+                    <p>Deep Search is an AI-enhanced way of searching for information. It builds on traditional web search by using advanced AI (like large language models) to better understand your query and search intent. Instead of just matching keywords, Deep Search tries to grasp what you really want to know, then scours the web more deeply to find the most relevant results.</p>
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-xl mb-3 text-green-400"><i class="fas fa-brain mr-2"></i>Deep Research</h4>
+                    <p>Deep Research takes things a step further. If Deep Search is like digging up the raw information, Deep Research is like analyzing that information and presenting you with the insights. In Deep Research, an AI doesn't just find relevant articles or data — it actually reads through those sources and synthesizes the findings into a coherent report or detailed answer for you, and at the end it generates new ideas.</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box fade-in mt-6">
+                <p class="italic text-lg">Source: <a href="https://medium.com/@themeynoush/deep-search-vs-deep-research-what-are-they-and-how-do-they-compare-ac24db023002" class="text-teal-300 hover:underline">Medium - Deep Search vs. Deep Research</a></p>
+            </div>
+        </div>
+        <div class="page-number">4</div>
+    </section>
+    
+    <!-- Evaluating Deep Research Capabilities -->
+    <section class="slide" id="slide-5" style="background: linear-gradient(135deg, #065F46 0%, #064E3B 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">1.2. Evaluating Deep Research Capabilities</h2>
+            <h3 class="text-2xl mb-4 text-teal-300">Metrics</h3>
+            <div class="card fade-in">
+                <p class="mb-4">To objectively assess AI research tools, we developed a comprehensive evaluation framework with ten critical metrics:</p>
+                
+                <!-- <div class="text-center mb-6">
+                    <img src="attachments/Pasted%20image%2020250414210836.png" alt="Evaluation Metrics Visualization" class="mx-auto max-w-xl">
+                </div> -->
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Citation Count</h4>
+                        <p class="text-sm">Number of relevant and authoritative sources cited</p>
+                        <p class="text-xs text-emerald-200 mt-1">Quantitative count with qualitative assessment of citation relevance</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Source Types</h4>
+                        <p class="text-sm">Diversity of source types (academic papers, technical documentation, etc.)</p>
+                        <p class="text-xs text-emerald-200 mt-1">Categorization and distribution analysis of source types</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Traceability</h4>
+                        <p class="text-sm">Ability to trace information to original sources</p>
+                        <p class="text-xs text-emerald-200 mt-1">Assessment of clear attribution and link between claims and sources</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Temporal Coverage</h4>
+                        <p class="text-sm">Coverage of historical developments and current state-of-the-art</p>
+                        <p class="text-xs text-emerald-200 mt-1">Evaluation of chronological range and recency of cited information</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Technical Accuracy</h4>
+                        <p class="text-sm">Correctness of technical information and concepts</p>
+                        <p class="text-xs text-emerald-200 mt-1">Validated against peer-reviewed literature and technical specifications</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Analytical Depth</h4>
+                        <p class="text-sm">Degree of insightful analysis beyond surface-level information</p>
+                        <p class="text-xs text-emerald-200 mt-1">Assessed by evaluation of explanatory mechanisms, causal relationships, and trade-off analyses</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Content Length</h4>
+                        <p class="text-sm">Comprehensiveness and detail of retrieved information</p>
+                        <p class="text-xs text-emerald-200 mt-1">Quantitative assessment with qualitative evaluation of information density</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Comprehensibility</h4>
+                        <p class="text-sm">Clarity and accessibility of complex technical information</p>
+                        <p class="text-xs text-emerald-200 mt-1">Evaluation of explanatory quality and appropriate technical level</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Organization</h4>
+                        <p class="text-sm">Logical structure and presentation of information</p>
+                        <p class="text-xs text-emerald-200 mt-1">Assessment of information flow, categorization, and relationship mapping</p>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-emerald-400 font-semibold">Synthesis Quality</h4>
+                        <p class="text-sm">Integration of diverse information into coherent insights</p>
+                        <p class="text-xs text-emerald-200 mt-1">Evaluation of comparative analysis and knowledge synthesis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">5</div>
+    </section>
+    
+    <!-- Case Study 1 -->
+    <section class="slide" id="slide-6" style="background: linear-gradient(135deg, #7E22CE 0%, #581C87 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">1.3. Deep Research Case Studies</h2>
+            
+            <h3 class="text-2xl mb-4 text-purple-300">Case Study 1: Hardware Security Research</h3>
+            
+            <div class="card fade-in">
+                <h4 class="text-lg mb-2 text-fuchsia-400">Prompt (Industry-focused):</h4>
+                <blockquote class="bg-purple-900 bg-opacity-30 p-4 rounded-lg">
+                    List hardware mitigations against cache side-channel attacks implemented in commercial CPUs, SoCs, and GPUs by Apple, Intel, AMD, ARM, Qualcomm, and NVIDIA. For each mitigation, specify the vendor, targeted attack(s) (if known), affected products/architectures, and provide links to supporting technical documentation, white papers, or patents.
+                </blockquote>
+                
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p class="font-semibold text-lg text-purple-300 text-center mb-3">Hardware Security Research Results:</p>
+                        <img src="attachments/cache_radar_chart.png" alt="Hardware Security Research Results" class="w-full max-w-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-purple-300 text-center mb-3">Unique Reference Distribution:</p>
+                        <img src="attachments/cache_sec_refs_pie.png" alt="Source Distribution for Hardware Security" class="mx-auto max-w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">6</div>
+    </section>
+    
+    <!-- Case Study 2 (part of 1.3 Real-World Deep Research Case Studies) -->
+    <section class="slide" id="slide-7" style="background: linear-gradient(135deg, #4338CA 0%, #3730A3 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h3 class="text-2xl mb-4 text-indigo-300">Case Study 2: Computer Architecture Research</h3>
+            
+            <div class="card fade-in">
+                <h4 class="text-lg mb-2 text-blue-400">Prompt (Academic-focused):</h4>
+                <blockquote class="bg-indigo-900 bg-opacity-30 p-4 rounded-lg">
+                    Please provide a comprehensive survey of papers on sparse General Matrix Multiplication (sparse GEMM or SpGEMM) acceleration published in ISCA, MICRO, ASPLOS, and HPCA conferences between 2018-2025
+                </blockquote>
+                
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <p class="font-semibold text-lg text-indigo-300 text-center mb-3">AI Tools comparison radar chart:</p>
+                        <img src="attachments/spgemm_radar_chart.png" alt="SpGEMM Radar Chart" class="mx-auto max-w-full">
+                    </div>
+                    <div>
+                        <p class="font-semibold text-lg text-indigo-300 text-center mb-3">Unique Reference Distribution:</p>
+                        <img src="attachments/spgemm_refs_pie.png" alt="Source Distribution for SpGEMM" class="mx-auto max-w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">7</div>
+    </section>
+    
+    <!-- AI Research Tool Feature Comparison -->
+    <section class="slide" id="slide-8" style="background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">1.4. AI Research Tool Feature Comparison</h2>
+            
+            <div class="grid-container">
+                <div class="card fade-in">
+                    <h3 class="text-xl mb-3 text-blue-400">Gemini</h3>
+                    <p class="mb-2"><a href="https://nvidia.enterprise.slack.com/docs/T04SYRAP3/F08JDLT9B6W" class="text-blue-300 hover:underline">How to use Google Gemini in China Office</a></p>
+                    <p>Customizable research plan</p>
+                    <div class="mt-3">
+                        <img src="attachments/Pasted%20image%2020250414200103.png" alt="Gemini Research Plan" class="w-full">
+                    </div>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="text-xl mb-3 text-purple-400">Perplexity</h3>
+                    <p class="mb-2">Research page <a href="https://www.perplexity.ai/page/sparse-general-matrix-multipli-D_e_5InKRhKYSZMVViOF3A" class="text-purple-300 hover:underline">SpGEMM Research</a></p>
+                    <p>Excellent for creating persistent, shareable research pages</p>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="text-xl mb-3 text-green-400">Genspark</h3>
+                    <p class="mb-2">Creates "Spark Pages" for research sharing</p>
+                    <p><a href="https://www.genspark.ai/spark?id=061c781a-1dc4-49ff-bc3c-a03d8decaf26" class="text-green-300 hover:underline">Genspark Example</a></p>
+                    <p>Strong visualization and formatting capabilities</p>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 class="text-xl mb-3 text-amber-400">Manus</h3>
+                    <p class="mb-2">Slower processing due to page-by-page PDF reading approach</p>
+                    <div class="mt-3">
+                        <img src="attachments/Pasted%20image%2020250414200918.png" alt="Manus Interface" class="w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">8</div>
+    </section>
+    
+    <!-- Key Finding -->
+    <section class="slide" id="slide-9" style="background: linear-gradient(135deg, #0369A1 0%, #0C4A6E 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <!-- <h2 class="text-3xl mb-6 text-transparent">Use Gemini</h2> -->
+            <h2 class="text-3xl mb-6 text-transparent">1.5. Use Gemini</h2>
+             
+            <div class="card fade-in">
+                <p class="text-xl leading-relaxed">
+                    After extensive testing across multiple research domains and comparing results with all major AI research assistants, our conclusion is that <span class="font-bold text-blue-400">Google Gemini</span> provides the most balanced and effective deep research capabilities for technical domains. Its strengths include superior citation quality, excellent technical accuracy, and strong synthesis abilities.
+                </p>
+                
+                <div class="mt-6 bg-gradient-to-r from-blue-900 to-sky-900 bg-opacity-50 p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold text-sky-300 mb-3">Key Advantages:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Superior citation quality with verifiable sources</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Excellent technical accuracy in complex domains</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Strong synthesis abilities across diverse information</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Customizable research plans for structured investigation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- <div class="mt-6 fade-in">
+                <h4 class="text-lg font-semibold text-sky-300 mb-3">Comprehensive Report Comparison:</h4>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="gemm_survey/analysis/gemm_comp_report.md" class="flex-1 p-3 bg-sky-900 bg-opacity-30 rounded-lg hover:bg-opacity-50 transition-all text-center">
+                        <i class="fas fa-file-alt text-sky-400 text-2xl mb-2"></i>
+                        <p>SpGEMM Comparative Report</p>
+                    </a>
+                    <a href="cachesec_comp_report.md" class="flex-1 p-3 bg-sky-900 bg-opacity-30 rounded-lg hover:bg-opacity-50 transition-all text-center">
+                        <i class="fas fa-file-alt text-sky-400 text-2xl mb-2"></i>
+                        <p>Cache Security Comparative Report</p>
+                    </a>
+                </div>
+            </div>
+             -->
+            <!-- <div class="card fade-in mt-6">
+                <h4 class="text-lg font-semibold text-sky-300 mb-3">Access in China:</h4>
+                <p>For NVIDIA employees in China offices, see: <a href="https://nvidia.enterprise.slack.com/docs/T04SYRAP3/F08JDLT9B6W" class="text-sky-300 hover:underline">How to use Google Gemini in China Office</a></p>
+            </div> -->
+        </div>
+        <div class="page-number">9</div>
+    </section>
+    
+    <!-- Efficient Paper Reading and Analysis -->
+    <section class="slide" id="slide-10" style="background: linear-gradient(135deg, #B45309 0%, #92400E 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">2. Efficient Paper Reading and Analysis with AI</h2>
+            
+            <div class="card fade-in">
+                <h3 class="text-xl mb-3 text-amber-400">2.1. Discovering and Monitoring Latest Research</h3>
+                
+                <div class="highlight-box">
+                    <h4 class="font-semibold text-yellow-300 mb-2">Daily arXiv Monitoring Strategies</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right text-yellow-400 mt-1 mr-2"></i>
+                            <span>Track trending papers via the official arXiv website: <a href="https://arxiv.org/list/cs.AR/new" class="text-amber-300 hover:underline">https://arxiv.org/list/cs.AR/new</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card fade-in mt-6">
+                <h3 class="text-xl mb-3 text-amber-400">2.2. AlphaXiv: Rapid Paper Comprehension and Community Discussion</h3>
+                
+                <div class="bg-gradient-to-r from-amber-900 to-yellow-900 bg-opacity-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold text-yellow-300 mb-2">How to Access and Leverage AlphaXiv:</h4>
+                    <p>Simply replace "arxiv" with "alphaxiv" in standard arXiv links</p>
+                    <p class="text-sm mt-2">Example: <a href="https://arxiv.org/abs/2503.20377" class="text-amber-300 hover:underline">https://arxiv.org/abs/2503.20377</a> → <a href="https://www.alphaxiv.org/abs/2503.20377" class="text-green-300 hover:underline">https://www.alphaxiv.org/abs/2503.20377</a></p>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-semibold text-yellow-300 mb-2">Core Features and Benefits:</h4>
+                    <ul class="space-y-2 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Automatically generates blog-style summaries for quick understanding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Supports multiple languages for interface and content</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Provides community discussion features to view expert comments and insights</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="font-semibold text-yellow-300 mt-3">Practical Example Paper: <a href="https://www.alphaxiv.org/abs/2503.20377" class="text-amber-300 hover:underline">https://www.alphaxiv.org/abs/2503.20377</a></p>
+                    <!-- <div class="mt-3">
+                        <img src="attachments/Pasted%20image%2020250407173700.png" alt="AlphaXiv Interface" class="w-full">
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="page-number">10</div>
+    </section>
+    
+    <!-- Comprehensive Pipeline for Non-arXiv Paper Processing -->
+    <section class="slide" id="slide-11" style="background: linear-gradient(135deg, #92400E 0%, #78350F 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">2.3. Comprehensive Pipeline for Non-arXiv Paper Processing</h2>
+            
+            <div class="grid-container">
+                <div class="card fade-in">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center mr-3">
+                            <span class="font-bold text-amber-900">1</span>
+                        </div>
+                        <h3 class="text-xl text-amber-400">Reference Management with Zotero</h3>
+                    </div>
+                    
+                    <ul class="space-y-2 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Organize papers with tags and collections</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Automatically extract metadata and citations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Annotate PDFs directly within the platform</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center mr-3">
+                            <span class="font-bold text-amber-900">2</span>
+                        </div>
+                        <h3 class="text-xl text-amber-400">Convert PDF to Structured Formats</h3>
+                    </div>
+                    
+                    <ul class="space-y-2 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Use <a href="https://github.com/VikParuchuri/marker" class="text-amber-300 hover:underline">Marker</a> for PDF to Markdown/JSON conversion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Extract text, figures, and tables with high fidelity</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Example: <a href="attachments/marker_ubmesh/reader_en.md" class="text-amber-300 hover:underline">ubmesh</a></span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card fade-in">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center mr-3">
+                            <span class="font-bold text-amber-900">3</span>
+                        </div>
+                        <h3 class="text-xl text-amber-400">AI-Assisted Analysis and Knowledge Extraction</h3>
+                    </div>
+                    
+                    <ul class="space-y-2 pl-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Use CURSOR for advanced paper querying and insight extraction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-400 mt-1 mr-2"></i>
+                            <span>Train custom summarization models with AlphaXiv outputs</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">11</div>
+    </section>
+    
+    <!-- Automated Research Communication -->
+    <section class="slide" id="slide-12" style="background: linear-gradient(135deg, #BE185D 0%, #9D174D 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">3. Automated Research Communication: From Papers to Presentations</h2>
+            
+            <div class="card fade-in">
+                <h3 class="text-xl mb-3 text-pink-400">3.1. AI-Powered Slide Generation from Technical Papers</h3>
+                
+                <div class="bg-gradient-to-r from-pink-900 to-rose-900 bg-opacity-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-semibold text-pink-300 mb-2">Example Prompt for Slide Generation:</h4>
+                    <pre class="text-sm"><code>Read this paper and create comprehensive presentation slides in a single HTML file to introduce the paper to students, incorporating original figures and diagrams from the paper.</code></pre>
+                </div>
+                
+                <div class="overflow-x-auto mt-4">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool Combination</th>
+                                <th>Presentation Link</th>
+                                <th>Features and Strengths</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Genspark</td>
+                                <td><a href="attachments/ubmesh_paper_reading/genspark.html" class="text-pink-300 hover:underline">genSpark_ubmesh</a></td>
+                                <td>Includes original arXiv paper images, professional layout, excellent slide transitions</td>
+                            </tr>
+                            <tr>
+                                <td>Genspark (alt)</td>
+                                <td><a href="attachments/ubmesh_paper_reading/genspark2.html" class="text-pink-300 hover:underline">genSpark_fetch</a></td>
+                                <td>Comprehensive content organization, detailed explanation of methodology</td>
+                            </tr>
+                            <tr>
+                                <td>Manus</td>
+                                <td><a href="attachments/ubmesh_paper_reading/manus.html" class="text-pink-300 hover:underline">manus_ubmesh</a></td>
+                                <td>Clear structure, emphasized key points, excellent technical accuracy</td>
+                            </tr>
+                            <tr>
+                                <td>Cursor+Marker</td>
+                                <td><a href="attachments/marker_ubmesh/ub-mesh-presentation.html" class="text-pink-300 hover:underline">cursor_ub_mesh_slides</a></td>
+                                <td>Uses locally OCR-processed images, highly customizable, interactive elements</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- <div class="card fade-in mt-6">
+                <h3 class="text-xl mb-3 text-pink-400">Additional AI-Powered Research Communication Features</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                        <h4 class="font-semibold text-pink-300 mb-1"><i class="fas fa-file-alt mr-2"></i>Executive Summaries</h4>
+                        <p class="text-sm">Automatic generation for different audience levels</p>
+                    </div>
+                    <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                        <h4 class="font-semibold text-pink-300 mb-1"><i class="fas fa-project-diagram mr-2"></i>Comparative Analysis</h4>
+                        <p class="text-sm">Creation of comparisons between multiple related papers</p>
+                    </div>
+                    <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                        <h4 class="font-semibold text-pink-300 mb-1"><i class="fas fa-image mr-2"></i>Research Posters</h4>
+                        <p class="text-sm">Development of posters with balanced text and visual elements</p>
+                    </div>
+                    <div class="bg-pink-900 bg-opacity-30 p-3 rounded-lg">
+                        <h4 class="font-semibold text-pink-300 mb-1"><i class="fas fa-laptop-code mr-2"></i>Interactive Demos</h4>
+                        <p class="text-sm">Demonstration concepts based on paper methodologies</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="page-number">12</div>
+    </section>
+    
+    <!-- Integrated Knowledge Management -->
+    <section class="slide" id="slide-13" style="background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-3xl mb-6 text-transparent">4. Integrated Knowledge Management</h2>
+            
+            <div class="card fade-in">
+                <h3 class="text-xl mb-3 text-blue-400">4.1. Building a Comprehensive Research System</h3>
+                
+                <div class="highlight-box">
+                    <h4 class="font-semibold text-blue-300 mb-2">Cursor + Obsidian + Zotero Workflow</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="font-semibold text-blue-300"><i class="fas fa-code mr-2"></i>Cursor</p>
+                            <p class="text-sm">AI-assisted coding, technical document creation, and paper analysis</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="font-semibold text-blue-300"><i class="fas fa-book mr-2"></i>Zotero</p>
+                            <p class="text-sm">Reference management, PDF annotation, and citation organization</p>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg">
+                            <p class="font-semibold text-blue-300"><i class="fas fa-brain mr-2"></i>Obsidian</p>
+                            <p class="text-sm">Knowledge linking, concept mapping, and personal research database</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="card fade-in mt-6">
+                <h3 class="text-xl mb-3 text-blue-400">Knowledge Flow Architecture</h3>
+                
+                <div class="flex flex-col space-y-3">
+                    <div class="flex items-center">
+                        <div class="bg-blue-600 p-2 rounded-lg">
+                            <i class="fas fa-book-open text-white"></i>
+                        </div>
+                        <div class="mx-2">
+                            <i class="fas fa-long-arrow-alt-right text-blue-400"></i>
+                        </div>
+                        <div class="bg-blue-500 p-2 rounded-lg">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        <div class="mx-2">
+                            <i class="fas fa-long-arrow-alt-right text-blue-400"></i>
+                        </div>
+                        <div class="bg-blue-400 p-2 rounded-lg">
+                            <i class="fas fa-project-diagram text-white"></i>
+                        </div>
+                    </div>
+                    <p class="text-center">Capture references in Zotero → Extract key points with AI → Link concepts in Obsidian</p>
+                </div> -->
+                
+                <!-- <ul class="space-y-2 mt-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                        <span>Use bidirectional linking to create connections between related papers and concepts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                        <span>Build personal knowledge graph for visual exploration of research domain</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-blue-400 mt-1 mr-2"></i>
+                        <span>Generate new research questions by identifying gaps and unexplored connections</span>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+        <div class="page-number">13</div>
+    </section>
+    
+    <!-- Obsidian Plugins -->
+    <section class="slide" id="slide-14" style="background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h3 class="text-2xl mb-6 text-blue-300">4.2. Obsidian Plugins</h3>
+            
+            <div class="grid-container">
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Advanced Tables</h4>
+                    <p class="mb-2">Powerful table management with intuitive controls</p>
+                    <img src="https://raw.githubusercontent.com/tgrosinger/advanced-tables-obsidian/main/resources/screenshots/basic-functionality.gif" alt="Advanced Tables" class="w-full">
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Image Toolkit</h4>
+                    <p class="mb-2">Enhanced image viewing with zoom, rotation, and manipulation</p>
+                    <img src="https://raw.githubusercontent.com/sissilab/obsidian-image-toolkit/master/example/normal_mode_screenshot.png" alt="Image Toolkit" class="w-full">
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Editing Toolbar</h4>
+                    <p class="mb-2">Rich text editing capabilities for complex documents</p>
+                    <img src="https://raw.githubusercontent.com/cumany/obsidian-editing-toolbar/HEAD/editing-toolbar-demo.gif" alt="Editing Toolbar" class="w-full">
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Floating TOC</h4>
+                    <p class="mb-2">Accessible table of contents for navigation in complex documents</p>
+                    <img src="https://github.com/user-attachments/assets/b64c3add-b285-4756-8d74-58a872caf958" alt="Floating TOC" class="w-full">
+                </div>
+
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Diagrams (draw.io)</h4>
+                    <p class="mb-2">Professional diagram creation integrated with notes</p>
+                    <img src="https://raw.githubusercontent.com/zapthedingbat/drawio-obsidian/HEAD//docs/image/screenshot1.png" alt="Draw.io" class="w-full">
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Excalidraw</h4>
+                    <p class="mb-2">Feature-rich sketching tool integrated into Obsidian</p>
+                    <img src="https://user-images.githubusercontent.com/14358394/156931370-aa4d88de-c4a8-46cc-aeb2-dc09aa0bea39.jpg" alt="Excalidraw" class="w-full">
+                </div>
+                
+                <div class="card fade-in">
+                    <h4 class="text-lg mb-2 text-blue-400">Zotero Integration</h4>
+                    <p class="mb-2">Insert and import citations, bibliographies, notes, and PDF annotations from Zotero</p>
+                    <img src="https://raw.githubusercontent.com/mgmeyers/obsidian-zotero-integration/main/screenshots/demo.gif" alt="Zotero Integration" class="w-full">
+                </div>
+            </div>
+            
+            <div class="card fade-in mt-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                        <i class="fas fa-table text-blue-400 text-xl mb-2"></i>
+                        <p class="font-semibold text-blue-300">Table of Contents</p>
+                        <p class="text-xs">Automatic document navigation</p>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                        <i class="fas fa-quote-right text-blue-400 text-xl mb-2"></i>
+                        <p class="font-semibold text-blue-300">Citation</p>
+                        <p class="text-xs">Zotero integration for references</p>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                        <i class="fas fa-database text-blue-400 text-xl mb-2"></i>
+                        <p class="font-semibold text-blue-300">Dataview</p>
+                        <p class="text-xs">Dynamic research data views</p>
+                    </div>
+                    <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg text-center">
+                        <i class="fas fa-sitemap text-blue-400 text-xl mb-2"></i>
+                        <p class="font-semibold text-blue-300">Diagrams</p>
+                        <p class="text-xs">Professional diagram creation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">14</div>
+    </section>
+    
+    <!-- Conclusion Slide -->
+    <section class="slide" id="slide-15" style="background: var(--gradient-1);">
+        <div class="bg-pattern"></div>
+        <div class="slide-content">
+            <h2 class="text-4xl mb-6 text-center">Conclusion</h2>
+            
+            <div class="card fade-in text-center">
+                <p class="text-xl leading-relaxed mb-6">
+                    AI-powered research tools are fundamentally transforming how academic and technical discovery occurs, enabling researchers to focus on higher-level analysis, creative thinking, and novel insights.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-tachometer-alt text-4xl text-white mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2">Enhanced Productivity</h3>
+                        <p class="text-sm">Automate routine research tasks to focus on creative analysis</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-lightbulb text-4xl text-white mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2">Deeper Insights</h3>
+                        <p class="text-sm">Uncover connections across diverse information sources</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <i class="fas fa-rocket text-4xl text-white mb-3"></i>
+                        <h3 class="text-lg font-semibold mb-2">Accelerated Discovery</h3>
+                        <p class="text-sm">Rapidly iterate through research cycles with AI assistance</p>
+                    </div>
+                </div>
+                
+                <p class="text-xl mt-8">
+                    The future of research lies in effective human-AI collaboration, combining computational power with human creativity and expertise.
+                </p>
+            </div>
+        </div>
+        <div class="page-number">15</div>
+    </section>
+    
+    <!-- Thank You Slide -->
+    <section class="slide title-slide" id="slide-16">
+        <div class="bg-pattern"></div>
+        <div class="slide-content text-center">
+            <h2 class="text-5xl mb-6 animate__animated animate__fadeInDown">Thank You</h2>
+            <p class="text-2xl animate__animated animate__fadeIn animate__delay-1s">Questions?</p>
+        </div>
+        <div class="page-number">16</div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const progressBar = document.getElementById('progressBar');
+            const slideIndicator = document.getElementById('slideIndicator');
+            
+            let currentSlide = 0;
+            
+            // Create slide indicators
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('indicator-dot');
+                dot.addEventListener('click', () => goToSlide(index));
+                slideIndicator.appendChild(dot);
+            });
+            
+            const indicatorDots = document.querySelectorAll('.indicator-dot');
+            
+            // Update slide visibility and progress bar
+            function updateSlide() {
+                window.scrollTo({
+                    top: slides[currentSlide].offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                
+                // Update indicators
+                indicatorDots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+                
+                // Check for elements to animate
+                const elementsToAnimate = slides[currentSlide].querySelectorAll('.fade-in');
+                elementsToAnimate.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, 100 * index);
+                });
+            }
+            
+            // Navigation functions
+            function goToSlide(index) {
+                // Reset animations on previous slide
+                const previousElements = slides[currentSlide].querySelectorAll('.fade-in');
+                previousElements.forEach(element => {
+                    element.classList.remove('visible');
+                });
+                
+                currentSlide = index;
+                updateSlide();
+            }
+            
+            function nextSlide() {
+                if (currentSlide < slides.length - 1) {
+                    goToSlide(currentSlide + 1);
+                }
+            }
+            
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    goToSlide(currentSlide - 1);
+                }
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Handle scroll detection
+            let isScrolling;
+            window.addEventListener('scroll', function() {
+                clearTimeout(isScrolling);
+                
+                isScrolling = setTimeout(function() {
+                    // Find which slide is most in view
+                    let closestSlide = 0;
+                    let closestDistance = Infinity;
+                    
+                    slides.forEach((slide, index) => {
+                        const rect = slide.getBoundingClientRect();
+                        const distance = Math.abs(rect.top);
+                        
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestSlide = index;
+                        }
+                    });
+                    
+                    if (closestSlide !== currentSlide) {
+                        currentSlide = closestSlide;
+                        
+                        // Don't scroll again but update indicators
+                        indicatorDots.forEach((dot, index) => {
+                            if (index === currentSlide) {
+                                dot.classList.add('active');
+                            } else {
+                                dot.classList.remove('active');
+                            }
+                        });
+                        
+                        const progress = ((currentSlide + 1) / slides.length) * 100;
+                        progressBar.style.width = `${progress}%`;
+                        
+                        // Animate elements in the current view
+                        const elementsToAnimate = slides[currentSlide].querySelectorAll('.fade-in');
+                        elementsToAnimate.forEach((element, index) => {
+                            setTimeout(() => {
+                                element.classList.add('visible');
+                            }, 100 * index);
+                        });
+                    }
+                }, 66);
+            }, false);
+            
+            // Initial setup
+            updateSlide();
+            
+            // Animate elements in first slide
+            const firstSlideElements = slides[0].querySelectorAll('.fade-in');
+            firstSlideElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, 500 + (100 * index));
+            });
+            
+            // Setup intersection observer for animations when scrolling
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const elementsToAnimate = entry.target.querySelectorAll('.fade-in');
+                        elementsToAnimate.forEach((element, index) => {
+                            setTimeout(() => {
+                                element.classList.add('visible');
+                            }, 100 * index);
+                        });
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            slides.forEach(slide => {
+                observer.observe(slide);
+            });
+        });
+    </script>
+</body>
+</html>
